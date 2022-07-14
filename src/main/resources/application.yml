@@ -1,0 +1,21 @@
+#ActiveMQ配置
+## 基础配置
+spring:
+  activemq:
+    broker-url: tcp://localhost:61616
+    user: admin
+    password: admin
+    pool:   # 线程池配置
+      enabled: false
+      max-connections: 50
+  #  jms:  ## 开启支持发布订阅模式，默认点对点模式
+  #    pub-sub-domain: true
+
+mq:
+  topic: mq.topic
+  queue: mq.queue
+
+## 集群配置
+#spring.activemq.broker-url: failover:(tcp://10.10.2.137:61616,tcp://10.10.2.138:61616,tcp://10.10.2.139:61616)
+server:
+  port: 8079
